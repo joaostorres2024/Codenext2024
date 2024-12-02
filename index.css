@@ -1,62 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
+  overflow-y: hidden;
   font-family: "Poppins";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.container{
+.header-container{
+  background: white;
+  padding: 0 20px 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 50px;
+  font-size: 12px;
+}
+
+.header-container a{
+  color: black;
+  text-decoration: none;
+}
+
+.nav-ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-ul a{
+  list-style-type: none;
+}
+
+.nav-ul li{
+  padding: 0 8px 0;
+}
+
+.midia-icons{
+  width: 25px;
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.rain-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rain-container .rain{
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2b2b2b;
+  animation-name: rainAnim;
+  animation-duration: 1s;
+  animation-delay: var(--rain-delay);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.main-container{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 20px;
   height: 100vh;
   width: 100vw;
-  color: white;
-  background: no-repeat linear-gradient(#000000, #050016);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  position: absolute;
 }
 
-.image1{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
+#codenextimg{
+  margin-top: -70px;
+  padding: 30px;
+  height: 350px;
+  width: 350px;
 }
 
-.image_cancela{
-  margin: -30px;
-  width: 300px;
+
+/*Animações e Keyframes*/
+
+@keyframes rainAnim {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(100vh);
+  }
 }
 
-.text1{
-  line-height: 30px;
-  text-align: center;
-  font-size: 30px;
+@keyframes shake {
+  0%{
+    transform: translateX(0);
+  }
+  25%{
+    transform: translateX(-10px);
+  }
+  50%{
+    transform: translateX(10px);
+  }
+  75%{
+    transform: translateX(-10px);
+  }
+  100%{
+    transform: translateX(0);
+  }
 }
 
-.text2{
-  margin-top: 15px;
-  padding: 0 0 20px;
-  text-align: center;
+@keyframes floating{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.animation{
+  animation: shake 0.5s ease;
 }
 
-.logo_codenext{
-  margin-right: 10px;
-  width: 100px;
-}
-
-.container2{
-  display: flex;
-  align-items: center;
-}
-
-.instagram{
-  margin-left: 10px;
-  width: 40px;
-}
-
-.instagram:hover{
-  width: 50px;
-}
