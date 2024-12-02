@@ -53,8 +53,21 @@
   animation: change 10s ease infinite;
 }
 
+<<<<<<< HEAD
 .main-container h1{
   font-size: 150px;
+=======
+.codenextimg{
+  margin-top: -70px;
+  padding: 30px;
+  height: 50  0px;
+  width: 500px;
+}
+
+.main-container p {
+  margin-top: -100px;
+  color: white;
+>>>>>>> 49c17c0 (Final)
 }
 
 .main-container p{
